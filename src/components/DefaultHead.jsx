@@ -4,7 +4,7 @@ import React from "react";
 const DefaultHead = ({children}) => {
   return (
     <Head>
-      <title></title>
+      <title>LUNA 문해력 QUIZ</title>
       <meta name="description" content="" />
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       <meta property="og:image" content="https://bucket.2w.vc/public/vote.png" />

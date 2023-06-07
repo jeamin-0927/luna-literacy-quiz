@@ -1,0 +1,63 @@
+.title{
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	padding: 40px 0;
+}
+
+.titleIcon{
+	background: url(/luna.svg) no-repeat;
+	background-size: contain;
+	width: 30px;
+	height: 30px;
+}
+.titleText{
+	font-size: 25px;
+	font-weight: 700;
+	margin-left: 10px;
+}
+
+.center{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.gap{
+	margin-top: 30px;
+}
+
+.button{
+	font-size: 17px;
+	font-weight: 500;
+
+	padding: 10px 0;
+
+	border-radius: 30px;
+
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	
+	background-color: #2B274B;
+	color: #FAFAFF;
+
+	width: 85%;
+}
+
+.input{
+	margin-top: 5px;
+
+	width: 85%;
+	padding: 12px 10px;
+	font-size: 15px;
+	border: 1px solid #c0c0dc60;
+	outline: none;
+	border-radius: 5px;
+
+	background-color: #ffffff;
+}
