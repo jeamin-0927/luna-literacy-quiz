@@ -34,10 +34,6 @@ const Quiz = () => {
   }, 1000);
 
   useEffect(() => {
-    
-  }, []);
-
-  useEffect(() => {
     if (userData.name.length === 0) {
       router.push("/");
     }

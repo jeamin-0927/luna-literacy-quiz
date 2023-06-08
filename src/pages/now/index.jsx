@@ -1,53 +1,77 @@
+import axios from "axios";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
 import { useRecoilState } from "recoil";
-import io, { Manager } from "socket.io-client";
+// import io, { Manager } from "socket.io-client";
 
 import DefaultHead from "@/components/DefaultHead";
-import styles from "@/styles/Home.module.css";
+import LoadingSpinner from "@/components/LoadingSpinner";
+import homeStyles from "@/styles/Home.module.css";
+import styles from "@/styles/Now.module.css";
 import * as env from "@/utils/env";
 import { userDataAtom } from "@/utils/states";
 
-let socket;
+let interval = null;
 
 export default function Home() {
+  const [data, setData] = useState([]);
+  const [loading, setLoading] = useState(true);
+
   useEffect(() => {
-    socketIntialize();
-  });
+    (async () => {
+      await getData();
+      setLoading(false);
+    })();
+  }, []);
 
-  const socketIntialize = async () => {
-    await fetch("/api/socket");
-    
-    socket = io(env.API, {
-      path: "/api/socket",
-    });
+  try{ clearInterval(interval); } catch { console.log("fail"); }
+  interval = setInterval(() => {
+    getData();
+  }, 1000);
 
-    console.log(socket);
-
-    socket.on("connect", () => {
-      console.log(socket);
-    });
-
-    return () => {
-      socket.disconnect();
-    };
+  const getData = async () => {
+    try{
+      const { data: nowData } = await axios({
+        method: "GET",
+        url: `${env.API}/api/now`,
+      });
+      setData(nowData);
+    }
+    catch {
+      setData([]);
+    }
   };
   
   return (
     <>
       <DefaultHead></DefaultHead>
       <main className="main">
-        <div className="inner">
-          <div className={styles.title}>
-            <div className={styles.titleIcon}></div>
-            <div className={styles.titleText}>2023 LUNA 문해력 Quiz</div>
+        <LoadingSpinner show={loading} />
+        <div className="inner" style={{
+          maxWidth: "100%",
+        }}>
+          <div className={homeStyles.title}>
+            <div className={homeStyles.titleIcon}></div>
+            <div className={homeStyles.titleText}>2023 LUNA 문해력 Quiz</div>
           </div>
-          <div className={styles.description}>
-            여기에 문해력 퀴즈 설명 뭐시라뭐시라
-            <button onClick={() => {
-              socket.emit("message", "test");
-            }}>asdf</button>
+          <div className={styles.now}>
+            {
+              data.map((item, index) => {
+                return (
+                  <div key={index} className={styles.nowItemBox}>
+                    <div className={styles.nowItem}>
+                      <div className={styles.nowItemRank}>{index + 1}위</div>
+                      <div className={styles.nowItemBorder}></div>
+                      <div className={styles.nowItemRight}>
+                        <div className={styles.nowItemName}>{item.name}</div>
+                        <div className={styles.nowItemPoint}>{Math.floor(item.score / item.answer.length * 100)}점</div>
+                      </div>
+                    </div>
+                  </div>
+                );
+              })
+            }
           </div>
         </div>
       </main>

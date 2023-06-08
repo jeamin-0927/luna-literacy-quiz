@@ -38,15 +38,13 @@ const handler = async (req, res) => {
 
   const rank = list.findIndex((_) => _.id.toString() === thisId.toString()) + 1;
 
-  setTimeout(() => {
-    res.status(200).json({
-      score,
-      answer,
-      rank,
-      length: list.length,
-      percent: Math.floor(rank / list.length * 100 * 100) / 100,
-    });
-  }, 5000);
+  res.status(200).json({
+    score,
+    answer,
+    rank,
+    length: list.length,
+    percent: Math.floor(rank / list.length * 100 * 100) / 100,
+  });
 
 };
 

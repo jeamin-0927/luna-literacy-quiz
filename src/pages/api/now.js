@@ -13,6 +13,7 @@ const handler = async (req, res) => {
       id: _._id,
       name: _.name,
       score: _.score,
+      answer: _.answer
     };
   });
   //result의 score순으로 정렬

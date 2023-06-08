@@ -1,7 +1,7 @@
 import Head from "next/head";
 import React from "react";
 
-const DefaultHead = ({children}) => {
+const DefaultHead = ({ children }) => {
   return (
     <Head>
       <title>LUNA 문해력 QUIZ</title>

@@ -16,9 +16,11 @@
 	max-width: 500px;
 	height: 100%;
 	display: flex;
-	flex-direction: row;
+	flex-direction: column;
 	align-items: center;
 	justify-content: center;
+	gap: 15px;
+	color: #2b274b7e;
 }
 
 .loader {
