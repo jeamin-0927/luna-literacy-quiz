@@ -62,7 +62,20 @@ export default function Home() {
             <div className={styles.titleText}>2023 LUNA 문해력 Quiz</div>
           </div>
           <div className={styles.description}>
-            여기에 문해력 퀴즈 설명 뭐시라뭐시라
+            <iframe 
+              width="496" 
+              height="281" 
+              src="https://www.youtube.com/embed/I3ayrjL-lPg?autoplay=1&loop=1&controls=0&modestbranding=0" 
+              title="2022 LUNA🌙 홍보영상" 
+              frameBorder="0" 
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+              allowfullscreen
+              className={styles.video}
+            />
+            <div className={styles.decdec}>
+              <div className={styles.munTile}>여러분의 문해력을 퀴즈로 알아봐요!</div>
+              <div className={styles.munDec}>상품 증정을 위하여 이름과 전화번호를 입력해 주세요!</div>
+            </div>
           </div>
 
           <div className={[styles.center, styles.gap].join(" ")}>

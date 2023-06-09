@@ -61,3 +61,32 @@
 
 	background-color: #ffffff;
 }
+
+.description{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 30px;
+}
+
+.decdec{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 5px;
+}
+.video{
+	border-radius: 10px;
+	border: 2px solid #c0c0dc60;
+}
+
+.munTile{
+	font-size: 25px;
+	font-weight: 600;
+}
+.munDec{
+	font-size: 16px;
+	font-weight: 400;
+}
