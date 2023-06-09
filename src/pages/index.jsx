@@ -35,10 +35,15 @@ export default function Home() {
   const router = useRouter();
 
   const quizStart = () => {
-    if (name === "" || !contact[1]) {
-      alert("필수 정보를 입력해주세요.");
+    if (name === "") {
+      alert("이름을 입력해 주세요.");
       return;
     }
+    if (!contact[1]) {
+      const yes = confirm("전화번호를 입력하지 않으면 기프티콘 수령을 할 수 없어요. 🫨\n계속 진행하시겠어요?");
+      if (!yes) return;
+    }
+
     setUserData({
       name,
       contact: contact[0],
