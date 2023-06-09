@@ -74,7 +74,7 @@ export default function Home() {
               title="2022 LUNA🌙 홍보영상" 
               frameBorder="0" 
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-              allowfullscreen
+              allowFullScreen
               className={styles.video}
             />
             <div className={styles.decdec}>
