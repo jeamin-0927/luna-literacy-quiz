@@ -65,7 +65,7 @@ export default function Home() {
             <iframe 
               width="496" 
               height="281" 
-              src="https://www.youtube.com/embed/I3ayrjL-lPg?autoplay=1&loop=1&controls=0&modestbranding=0" 
+              src="https://www.youtube.com/embed/I3ayrjL-lPg?autoplay=1&loop=1&controls=0&modestbranding=0&playlist=I3ayrjL-lPg" 
               title="2022 LUNA🌙 홍보영상" 
               frameBorder="0" 
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
