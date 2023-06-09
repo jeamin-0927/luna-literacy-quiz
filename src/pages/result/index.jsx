@@ -51,12 +51,12 @@ export default function Home() {
                     </div>
                     <div className={styles.examples}>
                       {
-                        quizData[index].example.map((example, index) => (
+                        quizData[index].example.map((example, i) => (
                           <div
-                            className={[styles.example, index === quizData[index].answer && styles.yesExample].join(" ")}
-                            key={index}
+                            className={[styles.example, i === quizData[index].answer && styles.yesExample].join(" ")}
+                            key={i}
                           >
-                            {index === quizData[index].answer && "정답: "}
+                            {i === quizData[index].answer && "정답: "}
                             {example}
                           </div>
 
