@@ -19,8 +19,8 @@ export default function Home() {
       router.push("/");
     }
     setTimeout(() => {
-      router.push("/");
-    }, 1000 * 10);
+      window.location.reload();
+    }, 1000 * 5);
   });
 
   return (
