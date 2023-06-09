@@ -18,6 +18,9 @@ export default function Home() {
     if (answer.length === 0) {
       router.push("/");
     }
+    setTimeout(() => {
+      router.push("/");
+    }, 1000 * 10);
   });
 
   return (
