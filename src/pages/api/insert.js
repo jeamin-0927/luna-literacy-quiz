@@ -1,7 +1,7 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 
 import { connectToDatabase } from "@/utils/db";
-import * as env from "@/utils/env";
+
 
 const handler = async (req, res) => {
   const { name, contact, answer } = req.body;

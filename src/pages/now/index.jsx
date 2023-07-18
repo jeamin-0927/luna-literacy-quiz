@@ -9,7 +9,6 @@ import DefaultHead from "@/components/DefaultHead";
 import LoadingSpinner from "@/components/LoadingSpinner";
 import homeStyles from "@/styles/Home.module.css";
 import styles from "@/styles/Now.module.css";
-import * as env from "@/utils/env";
 import { userDataAtom } from "@/utils/states";
 
 let interval = null;
@@ -34,7 +33,7 @@ export default function Home() {
     try{
       const { data: nowData } = await axios({
         method: "GET",
-        url: `${env.API}/api/now`,
+        url: `/api/now`,
       });
       setData(nowData);
     }

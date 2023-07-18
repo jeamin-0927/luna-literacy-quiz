@@ -2,7 +2,7 @@
 
 import axios from "axios";
 
-import * as env from "@/utils/env";
+
 
 const handler = async (req, res) => {
   const { name } = req.query;
@@ -11,7 +11,7 @@ const handler = async (req, res) => {
       method: "GET",
       url: "https://open.neis.go.kr/hub/schoolInfo",
       params: {
-        KEY: env.NEIS_API_KEY,
+        KEY: process.env.NEIS_API_KEY,
         Type: "json",
         SCHUL_NM: name,
       }
