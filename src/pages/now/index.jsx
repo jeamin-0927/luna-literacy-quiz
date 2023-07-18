@@ -33,7 +33,7 @@ export default function Home() {
     try{
       const { data: nowData } = await axios({
         method: "GET",
-        url: `/api/now`,
+        url: "/api/now",
       });
       setData(nowData);
     }
